@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FilmApp</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 </head>
 <body>
     <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
@@ -29,7 +31,6 @@
                       <a class="navbar-item">
                         Contact
                       </a>
-                      <hr class="navbar-divider"/>
                     </div>
                 </div>
                 <div class="navbar-item has-dropdown is-hoverable">
@@ -46,11 +47,18 @@
                       <a class="navbar-item">
                         Contact
                       </a>
-                      <hr class="navbar-divider"/>
                     </div>
                 </div>
                 <a class="navbar-item" href="/top">
                     Ranking
+                </a>
+            </div>
+            <div class="navbar-end">
+                <a class="navbar-item">
+                    Login
+                </a>
+                <a class="navbar-item">
+                    Sign in
                 </a>
             </div>
         </div>
