@@ -10,54 +10,68 @@
 </head>
 <body>
     <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item brand" href="/">
-                FilmApp
-            </a>
-        </div>
-        <div class="navbar-menu">
-            <div class="navbar-start">
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-item">
-                        Films
-                    </a>
-                    <div class="navbar-dropdown">
-                        {% for film in films %}
-                            <a class="navbar-item" href="/films?{{ film.title }}"> {{ film.title }} </a>
-                        {% endfor %}
-                        <div class="navbar-divider"></div>
-                        <a class="navbar-item" href='/films/'>More...</a>
-                    </div>
-                </div>
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-item">
-                        Categorys
-                    </a>
-                    <div class="navbar-dropdown">
-                        {% for genre in genres %}
-                            <a class="navbar-item" href="/genres?{{ genre.name }}"> {{ genre.name }} </a>
-                        {% endfor %}
-                        <div class="navbar-divider"></div>
-                        <a class="navbar-item" href="/genres/">More...</a>
-                    </div>
-                </div>
-                <a class="navbar-item" href="/top">
-                    Ranking
+        {% block nav %}
+            <div class="navbar-brand">
+                <a class="navbar-item brand" href="/">
+                    FilmApp
                 </a>
             </div>
-            <div class="navbar-end">
-                <a class="navbar-item">
-                    Login
-                </a>
-                <a class="navbar-item">
-                    Sign in
-                </a>
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-item">
+                            Films
+                        </a>
+                        <div class="navbar-dropdown">
+                            {% for film in films %}
+                                <a class="navbar-item" href="films/{{ film.title }}"> {{ film.title }} </a>
+                            {% endfor %}
+                            <div class="navbar-divider"></div>
+                            <a class="navbar-item" href='films/'>More...</a>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-item">
+                            Categorys
+                        </a>
+                        <div class="navbar-dropdown">
+                            {% for genre in genres %}
+                                <a class="navbar-item" href="genres?{{ genre.name }}"> {{ genre.name }} </a>
+                            {% endfor %}
+                            <div class="navbar-divider"></div>
+                            <a class="navbar-item" href="genres">More...</a>
+                        </div>
+                    </div>
+                    <a class="navbar-item" href="/top">
+                        Ranking
+                    </a>
+                </div>
+                <div class="navbar-end">
+                    <a class="navbar-item">
+                        Login
+                    </a>
+                    <a class="navbar-item">
+                        Sign in
+                    </a>
+                </div>
             </div>
-        </div>
+        {% endblock nav %}
     </nav>
     <main>
         <section class="box">
-
+            {% block main %}
+                <div>
+                    <section class="hero">
+                      <div class="hero-body">
+                        <div class="container">
+                          <h1 class="title">
+                            Film App
+                          </h1>
+                        </div>
+                      </div>
+                    </section>
+                </div>
+            {% endblock main %}
         </section>
     </main>
     <footer>
