@@ -1,6 +1,21 @@
-body{
-    background-color:black;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+*, *::after, *::before{
+    box-sizing:border-box;
 }
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.brand{
+    font-weight: bold;
+}
+
 footer p{
-    font-size: 0.5rem;
+    font-size: 0.6rem;
+}
+
+a:hover{
+    font-weight: bold;
 }

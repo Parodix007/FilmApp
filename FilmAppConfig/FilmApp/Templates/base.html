@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="/">
+            <a class="navbar-item brand" href="/">
                 FilmApp
             </a>
         </div>
@@ -22,15 +22,11 @@
                         Films
                     </a>
                     <div class="navbar-dropdown">
-                      <a class="navbar-item">
-                        Western
-                      </a>
-                      <a class="navbar-item">
-                        Jobs
-                      </a>
-                      <a class="navbar-item">
-                        Contact
-                      </a>
+                        {% for film in films %}
+                            <a class="navbar-item" href="/films?{{ film.title }}"> {{ film.title }} </a>
+                        {% endfor %}
+                        <div class="navbar-divider"></div>
+                        <a class="navbar-item" href='/films/'>More...</a>
                     </div>
                 </div>
                 <div class="navbar-item has-dropdown is-hoverable">
@@ -38,15 +34,11 @@
                         Categorys
                     </a>
                     <div class="navbar-dropdown">
-                      <a class="navbar-item">
-                        Western
-                      </a>
-                      <a class="navbar-item">
-                        Jobs
-                      </a>
-                      <a class="navbar-item">
-                        Contact
-                      </a>
+                        {% for genre in genres %}
+                            <a class="navbar-item" href="/genres?{{ genre.name }}"> {{ genre.name }} </a>
+                        {% endfor %}
+                        <div class="navbar-divider"></div>
+                        <a class="navbar-item" href="/genres/">More...</a>
                     </div>
                 </div>
                 <a class="navbar-item" href="/top">
@@ -65,8 +57,7 @@
     </nav>
     <main>
         <section class="box">
-            {% block content %}
-            {% endblock %}
+
         </section>
     </main>
     <footer>
