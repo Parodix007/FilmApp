@@ -23,9 +23,11 @@
                             Films
                         </a>
                         <div class="navbar-dropdown">
-                            {% for film in films %}
-                                <a class="navbar-item" href="films/{{ film.title }}"> {{ film.title }} </a>
-                            {% endfor %}
+                            {% block films %}
+                                {% for film in films %}
+                                    <a class="navbar-item" href="films/{{ film.title }}"> {{ film.title }} </a>
+                                {% endfor %}
+                            {% endblock films %}
                             <div class="navbar-divider"></div>
                             <a class="navbar-item" href='films/'>More...</a>
                         </div>
@@ -35,9 +37,11 @@
                             Categorys
                         </a>
                         <div class="navbar-dropdown">
-                            {% for genre in genres %}
-                                <a class="navbar-item" href="genres?{{ genre.name }}"> {{ genre.name }} </a>
-                            {% endfor %}
+                            {% block categorys %}
+                                {% for genre in genres %}
+                                    <a class="navbar-item" href="genres?{{ genre.name }}"> {{ genre.name }} </a>
+                                {% endfor %}
+                            {% endblock categorys %}
                             <div class="navbar-divider"></div>
                             <a class="navbar-item" href="genres">More...</a>
                         </div>
