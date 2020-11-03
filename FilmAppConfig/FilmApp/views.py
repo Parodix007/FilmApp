@@ -1,38 +1,35 @@
 from django.shortcuts import render
 from django.views import View
-from .querys import GetDataFromDB
-from django.db import connection
+from .Templates.nav_dropdowns import NavDropdown
 
 
 # Create your views here.
+class RenderDropdowns:
+    __nav_dropdowns = NavDropdown()
+
+    def dropdowns(self):
+        return {
+            "film": f"{self.__nav_dropdowns.nav_film_render()}",
+            "genre": f"{self.__nav_dropdowns.nav_genre_render()}",
+        }
+
+
+Dropdowns = RenderDropdowns()
 
 
 class MainView(View):
-    template = "base.html"
-
-    query_for_films = "SELECT id, film_title FROM film LIMIT 3"
-    query_for_genres = "SELECT id, genre_name FROM genre LIMIT 3"
-
-    getFilms = GetDataFromDB(query_for_films)
-    list_with_films = getFilms.get_film()
-
-    getGenres = GetDataFromDB(query_for_genres)
-    list_with_genres = getGenres.get_genre()
+    __template = "base.html"
 
     def get(self, request):
         return render(
             request,
-            self.template,
-            {
-                "author": "Sebastian Siarczyński",
-                "films": self.list_with_films,
-                "genres": self.list_with_genres,
-            },
+            self.__template,
+            Dropdowns.dropdowns(),
         )
 
 
 class FilmView(View):
-    template = "base_film.html"
+    __template = "base_film.html"
 
     def get(self, request):
-        return render(request, self.template)
+        return render(request, self.__template, Dropdowns.dropdowns())

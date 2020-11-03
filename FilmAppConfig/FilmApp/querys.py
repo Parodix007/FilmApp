@@ -20,7 +20,7 @@ class GetDataFromDB:
                 )
 
             return __list_of_films
-        except:
+        except SyntaxError:
             return False
 
     def get_genre(self):
@@ -37,5 +37,5 @@ class GetDataFromDB:
                     {"id": f"{item.id}", "name": f"{item.genre_name}"}
                 )
             return __list_of_genres
-        except:
+        except SyntaxError:
             return False

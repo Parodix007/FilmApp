@@ -1,0 +1,42 @@
+<nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item brand" href="/">
+            FilmApp
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-item">
+                    Films
+                </a>
+                <div class="navbar-dropdown">
+                    {{ film }}
+                    <div class="navbar-divider"></div>
+                    <a class="navbar-item" href='films/'>More...</a>
+                </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-item">
+                    Categorys
+                </a>
+                <div class="navbar-dropdown">
+                    {{ genre }}
+                    <div class="navbar-divider"></div>
+                    <a class="navbar-item" href="genres">More...</a>
+                </div>
+            </div>
+            <a class="navbar-item" href="/top">
+                Ranking
+            </a>
+        </div>
+        <div class="navbar-end">
+            <a class="navbar-item">
+                Login
+            </a>
+            <a class="navbar-item">
+                Sign in
+            </a>
+        </div>
+    </div>
+</nav>
