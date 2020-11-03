@@ -17,13 +17,44 @@
                     <section class="hero">
                       <div class="hero-body">
                         <div class="container">
-                          <h1 class="title">
-                            {% block main_title %} Film App {% endblock main_title %}
-                          </h1>
+                            <h1 class="title">
+                                {% block main_title %} Film App {% endblock main_title %}
+                            </h1>
+                            <p class="subtitle">
+                                {% block subtitle %} Best place to find a good movie {% endblock subtitle %}
+                            </p>
                         </div>
                       </div>
                     </section>
+                    <hr/>
                     {% block content %}
+                    <div class="tile is-ancestor">
+                        <div class="tile">
+                            <div class="box tile is-parent">
+                                <div class="tile is-child notification">
+                                    <div class="content">
+                                        <p class="title">About the app</p>
+                                        <div class="content">
+                                            {% lorem 3 p%}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile is-parent">
+                                <div class="content">
+                                    <p class="title">News</p>
+                                    <div class="content">
+                                        <ul>
+                                            <li>{% lorem 1 %}</li>
+                                            <li>{% lorem 1 %}</li>
+                                            <li>{% lorem 1 %}</li>
+                                            <li>{% lorem 1 %}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     {% endblock content %}
                 </div>
             {% endblock main %}
