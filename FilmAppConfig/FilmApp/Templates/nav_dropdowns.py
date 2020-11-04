@@ -14,13 +14,13 @@ list_with_genres = getGenres.get_genre()
 class NavDropdown:
     __nav_film_template = Template(
         "{% for film in films %}"
-        '<a class="navbar-item" href="films/{{ film.title }}"> {{ film.title }} </a>'
+        '<a class="navbar-item" href="film?film={{ film.title }}"> {{ film.title }} </a>'
         "{% endfor %}"
     )
 
     __nav_genre_template = Template(
         "{% for genre in genres %}"
-        '<a class="navbar-item" href="genres?{{ genre.name }}"> {{ genre.name }} </a>'
+        '<a class="navbar-item" href="genre?genre={{ genre.name }}"> {{ genre.name }} </a>'
         "{% endfor %}"
     )
 
