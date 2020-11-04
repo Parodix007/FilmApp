@@ -32,26 +32,9 @@
                                         </section>
                                     </div>
                                 </div>
-                                <div class="box tile is-parent">
-                                    <div class="tile is-child notification is-warning">
-                                        <div class="content">
-                                            <p class="title"><a href="films/">Film section...</a></p>
-                                            <div class="content">
-                                                <p class="subtitle">{% lorem 1 %}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box tile is-parent">
-                                    <div class="tile is-child notification is-dark">
-                                        <div class="content">
-                                            <p class="title"><a href="genres/">Category section...</a></p>
-                                            <div class="content">
-                                                <p class="subtitle">{% lorem 1 %}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {% block divs_categorys %}
+                                    {% include 'base_divs_with_categorys.html' %}
+                                {% endblock divs_categorys%}
                             </div>
                         </div>
                     <hr/>
